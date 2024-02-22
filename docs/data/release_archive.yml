@@ -577,7 +577,7 @@ release_archive:
     - name: "Flink JDBC Connector"
       connector: "jdbc"
       version: 3.1.2
-      release_date: 2024-05-01
+      release_date: 2024-02-21
       filename: "jdbc"
 
   flink_shaded:
