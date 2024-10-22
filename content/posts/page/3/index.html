@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" dir=ZgotmplZ>
+<html lang="en" dir=>
 
 <head>
   
@@ -20,18 +20,19 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://flink.apache.org/posts/" />
+
 <title>Flink Blog | Apache Flink</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.22eceb4d17baa9cdc0f57345edd6f215a40474022dfee39b63befb5fb3c596b5.css" integrity="sha256-IuzrTRe6qc3A9XNF7dbyFaQEdAIt/uObY777X7PFlrU=">
-<script defer src="/en.search.min.9c26da0e9ac4703fbae0fc780d19e43425167edc9ce097cede3cd12cad33d78a.js" integrity="sha256-nCbaDprEcD&#43;64Px4DRnkNCUWftyc4JfO3jzRLK0z14o="></script>
+<script defer src="/en.search.min.2dc707d571152da376d2100a1411d53dbe96bd9668a908c40f9b479ecc38decb.js" integrity="sha256-LccH1XEVLaN20hAKFBHVPb6WvZZoqQjED5tHnsw43ss="></script>
 <link rel="alternate" type="application/rss+xml" href="https://flink.apache.org/posts/index.xml" title="Apache Flink" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
 
-  <meta name="generator" content="Hugo 0.124.1">
+  <meta name="generator" content="Hugo 0.93.1" />
 
     
     <script>
@@ -54,7 +55,7 @@ https://github.com/alex-shpak/hugo-book
     
 </head>
 
-<body dir=ZgotmplZ>
+<body dir=>
   
 
 
@@ -235,6 +236,15 @@ https://github.com/alex-shpak/hugo-book
             
   
     <a class="dropdown-item" href="https://nightlies.apache.org/flink/flink-docs-stable/">Flink 1.20 (stable)<i class="link fa fa-external-link title" aria-hidden="true"></i>
+    </a>
+  
+
+          </li>
+        
+          <li>
+            
+  
+    <a class="dropdown-item" href="https://nightlies.apache.org/flink/flink-docs-release-2.0-preview1/">Flink 2.0 (preview)<i class="link fa fa-external-link title" aria-hidden="true"></i>
     </a>
   
 
@@ -508,8 +518,8 @@ We encourage you to download the release and share your feedback with the commun
 
 
 
-    <p>Introduction # The Flink community has designed a new Source framework based on FLIP-27 lately. This article is the continuation of the howto create a batch source with the new Source framework article . Now it is time to test the created source ! As the previous article, this one was built while implementing the Flink batch source for Cassandra.
-Unit testing the source # Testing the serializers # Example Cassandra SplitSerializer and SplitEnumeratorStateSerializer
+    <p>Introduction #  The Flink community has designed a new Source framework based on FLIP-27 lately. This article is the continuation of the howto create a batch source with the new Source framework article . Now it is time to test the created source ! As the previous article, this one was built while implementing the Flink batch source for Cassandra.
+Unit testing the source #  Testing the serializers #  Example Cassandra SplitSerializer and SplitEnumeratorStateSerializer
         <a href="/2023/05/12/howto-test-a-batch-source-with-the-new-source-framework/">...</a>
       
     </p>
@@ -534,7 +544,7 @@ Unit testing the source # Testing the serializers # Example Cassandra SplitSeria
 
 
 
-    <p>Introduction # The Flink community has been deprecating the DataSet API since version 1.12 as part of the work on FLIP-131: Consolidate the user-facing Dataflow SDKs/APIs (and deprecate the DataSet API) . This blog article illustrates the migration of a real-life batch DataSet pipeline to a batch DataStream pipeline. All the code presented in this article is available in the tpcds-benchmark-flink repo. The use case shown here is extracted from a broader work comparing Flink performances of different APIs by implementing TPCDS queries using these APIs.
+    <p>Introduction #  The Flink community has been deprecating the DataSet API since version 1.12 as part of the work on FLIP-131: Consolidate the user-facing Dataflow SDKs/APIs (and deprecate the DataSet API) . This blog article illustrates the migration of a real-life batch DataSet pipeline to a batch DataStream pipeline. All the code presented in this article is available in the tpcds-benchmark-flink repo. The use case shown here is extracted from a broader work comparing Flink performances of different APIs by implementing TPCDS queries using these APIs.
         <a href="/2023/05/09/howto-migrate-a-real-life-batch-pipeline-from-the-dataset-api-to-the-datastream-api/">...</a>
       
     </p>
@@ -559,8 +569,8 @@ Unit testing the source # Testing the serializers # Example Cassandra SplitSeria
 
 
 
-    <p>Introduction # The Flink community has designed a new Source framework based on FLIP-27 lately. Some connectors have migrated to this new framework. This article is a how-to for creating a batch source using this new framework. It was built while implementing the Flink batch source for Cassandra. If you are interested in contributing or migrating connectors, this blog post is for you!
-Implementing the source components # The source architecture is depicted in the diagrams below:
+    <p>Introduction #  The Flink community has designed a new Source framework based on FLIP-27 lately. Some connectors have migrated to this new framework. This article is a how-to for creating a batch source using this new framework. It was built while implementing the Flink batch source for Cassandra. If you are interested in contributing or migrating connectors, this blog post is for you!
+Implementing the source components #  The source architecture is depicted in the diagrams below:
         <a href="/2023/05/03/howto-create-a-batch-source-with-the-new-source-framework/">...</a>
       
     </p>
@@ -670,7 +680,7 @@ We highly recommend all users upgrade to Flink 1.15.4.
 
 
     <p>We are proud to announce the latest stable release of the operator. In addition to the expected stability improvements and fixes, the 1.4.0 release introduces the first version of the long-awaited autoscaler module.
-Flink Streaming Job Autoscaler # A highly requested feature for Flink applications is the ability to scale the pipeline based on incoming data load and the utilization of the dataflow. While Flink has already provided some of the required building blocks, this feature has not yet been realized in the open source ecosystem.
+Flink Streaming Job Autoscaler #  A highly requested feature for Flink applications is the ability to scale the pipeline based on incoming data load and the utilization of the dataflow. While Flink has already provided some of the required building blocks, this feature has not yet been realized in the open source ecosystem.
         <a href="/2023/02/27/apache-flink-kubernetes-operator-1.4.0-release-announcement/">...</a>
       
     </p>
@@ -726,7 +736,7 @@ We highly recommend all users upgrade to Flink 1.16.1.
 
 
     <p>The Apache Flink Community is pleased to announce that the upcoming minor version of Flink (1.17) includes the Delegation Token Framework proposed in FLIP-272. This enables Flink to authenticate to external services at a central location (JobManager) and distribute authentication tokens to the TaskManagers.
-Introduction # Authentication in distributed systems is not an easy task. Previously all worker nodes (TaskManagers) reading from or writing to an external system needed to authenticate on their own.
+Introduction #  Authentication in distributed systems is not an easy task. Previously all worker nodes (TaskManagers) reading from or writing to an external system needed to authenticate on their own.
         <a href="/2023/01/20/delegation-token-framework-obtain-distribute-and-use-temporary-credentials-automatically/">...</a>
       
     </p>

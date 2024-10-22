@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" dir=ZgotmplZ>
+<html lang="en" dir=>
 
 <head>
   
@@ -15,11 +15,12 @@
 
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Code Style and Quality Guide — Pull Requests &amp; Changes # Preamble # Pull Requests &amp; Changes # Common Coding Guide # Java Language Guide # Scala Language Guide # Components Guide # Formatting Guide # Rationale: We ask contributors to put in a little bit of extra effort to bring pull requests into a state that they can be more easily and more thoroughly reviewed. This helps the community in many ways:">
+<meta name="description" content="Code Style and Quality Guide — Pull Requests &amp; Changes #  Preamble #  Pull Requests &amp; Changes #  Common Coding Guide #  Java Language Guide #  Scala Language Guide #  Components Guide #  Formatting Guide #   Rationale: We ask contributors to put in a little bit of extra effort to bring pull requests into a state that they can be more easily and more thoroughly reviewed.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Code Style and Quality Guide — Pull Requests &amp; Changes" />
-<meta property="og:description" content="Code Style and Quality Guide — Pull Requests &amp; Changes # Preamble # Pull Requests &amp; Changes # Common Coding Guide # Java Language Guide # Scala Language Guide # Components Guide # Formatting Guide # Rationale: We ask contributors to put in a little bit of extra effort to bring pull requests into a state that they can be more easily and more thoroughly reviewed. This helps the community in many ways:" />
+<meta property="og:description" content="Code Style and Quality Guide — Pull Requests &amp; Changes #  Preamble #  Pull Requests &amp; Changes #  Common Coding Guide #  Java Language Guide #  Scala Language Guide #  Components Guide #  Formatting Guide #   Rationale: We ask contributors to put in a little bit of extra effort to bring pull requests into a state that they can be more easily and more thoroughly reviewed." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://flink.apache.org/how-to-contribute/code-style-and-quality-pull-requests/" /><meta property="article:section" content="how-to-contribute" />
+
 
 
 <title>Code Style and Quality Guide — Pull Requests & Changes | Apache Flink</title>
@@ -28,13 +29,13 @@
 <link rel="alternate" hreflang="zh" href="https://flink.apache.org/zh/how-to-contribute/code-style-and-quality-pull-requests/" title="Code Style and Quality Guide — Pull Requests & Changes">
 
 <link rel="stylesheet" href="/book.min.22eceb4d17baa9cdc0f57345edd6f215a40474022dfee39b63befb5fb3c596b5.css" integrity="sha256-IuzrTRe6qc3A9XNF7dbyFaQEdAIt/uObY777X7PFlrU=">
-<script defer src="/en.search.min.9c26da0e9ac4703fbae0fc780d19e43425167edc9ce097cede3cd12cad33d78a.js" integrity="sha256-nCbaDprEcD&#43;64Px4DRnkNCUWftyc4JfO3jzRLK0z14o="></script>
+<script defer src="/en.search.min.2dc707d571152da376d2100a1411d53dbe96bd9668a908c40f9b479ecc38decb.js" integrity="sha256-LccH1XEVLaN20hAKFBHVPb6WvZZoqQjED5tHnsw43ss="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
 
-  <meta name="generator" content="Hugo 0.124.1">
+  <meta name="generator" content="Hugo 0.93.1" />
 
     
     <script>
@@ -57,7 +58,7 @@ https://github.com/alex-shpak/hugo-book
     
 </head>
 
-<body dir=ZgotmplZ>
+<body dir=>
   
 
 
@@ -238,6 +239,15 @@ https://github.com/alex-shpak/hugo-book
             
   
     <a class="dropdown-item" href="https://nightlies.apache.org/flink/flink-docs-stable/">Flink 1.20 (stable)<i class="link fa fa-external-link title" aria-hidden="true"></i>
+    </a>
+  
+
+          </li>
+        
+          <li>
+            
+  
+    <a class="dropdown-item" href="https://nightlies.apache.org/flink/flink-docs-release-2.0-preview1/">Flink 2.0 (preview)<i class="link fa fa-external-link title" aria-hidden="true"></i>
     </a>
   
 
@@ -470,33 +480,33 @@ https://github.com/alex-shpak/hugo-book
   Code Style and Quality Guide — Pull Requests &amp; Changes
   <a class="anchor" href="#code-style-and-quality-guide--pull-requests--changes">#</a>
 </h1>
-<h4 id="preamblehahahugoshortcode65s0hbhb">
+<h4 id="preamblehahahugoshortcode-s0-hbhb">
   <a href="/how-to-contribute/code-style-and-quality-preamble/">Preamble</a>
-  <a class="anchor" href="#preamblehahahugoshortcode65s0hbhb">#</a>
+  <a class="anchor" href="#preamblehahahugoshortcode-s0-hbhb">#</a>
 </h4>
-<h4 id="pull-requests--changeshahahugoshortcode65s1hbhb">
+<h4 id="pull-requests--changeshahahugoshortcode-s1-hbhb">
   <a href="/how-to-contribute/code-style-and-quality-pull-requests/">Pull Requests &amp; Changes</a>
-  <a class="anchor" href="#pull-requests--changeshahahugoshortcode65s1hbhb">#</a>
+  <a class="anchor" href="#pull-requests--changeshahahugoshortcode-s1-hbhb">#</a>
 </h4>
-<h4 id="common-coding-guidehahahugoshortcode65s2hbhb">
+<h4 id="common-coding-guidehahahugoshortcode-s2-hbhb">
   <a href="/how-to-contribute/code-style-and-quality-common/">Common Coding Guide</a>
-  <a class="anchor" href="#common-coding-guidehahahugoshortcode65s2hbhb">#</a>
+  <a class="anchor" href="#common-coding-guidehahahugoshortcode-s2-hbhb">#</a>
 </h4>
-<h4 id="java-language-guidehahahugoshortcode65s3hbhb">
+<h4 id="java-language-guidehahahugoshortcode-s3-hbhb">
   <a href="/how-to-contribute/code-style-and-quality-java/">Java Language Guide</a>
-  <a class="anchor" href="#java-language-guidehahahugoshortcode65s3hbhb">#</a>
+  <a class="anchor" href="#java-language-guidehahahugoshortcode-s3-hbhb">#</a>
 </h4>
-<h4 id="scala-language-guidehahahugoshortcode65s4hbhb">
+<h4 id="scala-language-guidehahahugoshortcode-s4-hbhb">
   <a href="/how-to-contribute/code-style-and-quality-scala/">Scala Language Guide</a>
-  <a class="anchor" href="#scala-language-guidehahahugoshortcode65s4hbhb">#</a>
+  <a class="anchor" href="#scala-language-guidehahahugoshortcode-s4-hbhb">#</a>
 </h4>
-<h4 id="components-guidehahahugoshortcode65s5hbhb">
+<h4 id="components-guidehahahugoshortcode-s5-hbhb">
   <a href="/how-to-contribute/code-style-and-quality-components/">Components Guide</a>
-  <a class="anchor" href="#components-guidehahahugoshortcode65s5hbhb">#</a>
+  <a class="anchor" href="#components-guidehahahugoshortcode-s5-hbhb">#</a>
 </h4>
-<h4 id="formatting-guidehahahugoshortcode65s6hbhb">
+<h4 id="formatting-guidehahahugoshortcode-s6-hbhb">
   <a href="/how-to-contribute/code-style-and-quality-formatting/">Formatting Guide</a>
-  <a class="anchor" href="#formatting-guidehahahugoshortcode65s6hbhb">#</a>
+  <a class="anchor" href="#formatting-guidehahahugoshortcode-s6-hbhb">#</a>
 </h4>
 <hr>
 <p><strong>Rationale:</strong> We ask contributors to put in a little bit of extra effort to bring pull requests into a state that they can be more easily and more thoroughly reviewed. This helps the community in many ways:</p>

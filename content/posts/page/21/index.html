@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" dir=ZgotmplZ>
+<html lang="en" dir=>
 
 <head>
   
@@ -20,18 +20,19 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://flink.apache.org/posts/" />
+
 <title>Flink Blog | Apache Flink</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.22eceb4d17baa9cdc0f57345edd6f215a40474022dfee39b63befb5fb3c596b5.css" integrity="sha256-IuzrTRe6qc3A9XNF7dbyFaQEdAIt/uObY777X7PFlrU=">
-<script defer src="/en.search.min.9c26da0e9ac4703fbae0fc780d19e43425167edc9ce097cede3cd12cad33d78a.js" integrity="sha256-nCbaDprEcD&#43;64Px4DRnkNCUWftyc4JfO3jzRLK0z14o="></script>
+<script defer src="/en.search.min.2dc707d571152da376d2100a1411d53dbe96bd9668a908c40f9b479ecc38decb.js" integrity="sha256-LccH1XEVLaN20hAKFBHVPb6WvZZoqQjED5tHnsw43ss="></script>
 <link rel="alternate" type="application/rss+xml" href="https://flink.apache.org/posts/index.xml" title="Apache Flink" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
 
-  <meta name="generator" content="Hugo 0.124.1">
+  <meta name="generator" content="Hugo 0.93.1" />
 
     
     <script>
@@ -54,7 +55,7 @@ https://github.com/alex-shpak/hugo-book
     
 </head>
 
-<body dir=ZgotmplZ>
+<body dir=>
   
 
 
@@ -235,6 +236,15 @@ https://github.com/alex-shpak/hugo-book
             
   
     <a class="dropdown-item" href="https://nightlies.apache.org/flink/flink-docs-stable/">Flink 1.20 (stable)<i class="link fa fa-external-link title" aria-hidden="true"></i>
+    </a>
+  
+
+          </li>
+        
+          <li>
+            
+  
+    <a class="dropdown-item" href="https://nightlies.apache.org/flink/flink-docs-release-2.0-preview1/">Flink 2.0 (preview)<i class="link fa fa-external-link title" aria-hidden="true"></i>
     </a>
   
 
@@ -480,7 +490,7 @@ https://github.com/alex-shpak/hugo-book
     <p>The Apache Flink community released another bugfix version of the Apache Flink 1.1. series.
 We recommend all users to upgrade to Flink 1.1.2.
 &lt;dependency&gt; &lt;groupId&gt;org.apache.flink&lt;/groupId&gt; &lt;artifactId&gt;flink-java&lt;/artifactId&gt; &lt;version&gt;1.1.2&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.flink&lt;/groupId&gt; &lt;artifactId&gt;flink-streaming-java_2.10&lt;/artifactId&gt; &lt;version&gt;1.1.2&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.flink&lt;/groupId&gt; &lt;artifactId&gt;flink-clients_2.10&lt;/artifactId&gt; &lt;version&gt;1.1.2&lt;/version&gt; &lt;/dependency&gt; You can find the binaries on the updated Downloads page.
-Release Notes - Flink - Version 1.1.2 [FLINK-4236] - Flink Dashboard stops showing list of uploaded jars if main method cannot be looked up [FLINK-4309] - Potential null pointer dereference in DelegatingConfiguration#keySet() [FLINK-4334] - Shaded Hadoop1 jar not fully excluded in Quickstart [FLINK-4341] - Kinesis connector does not emit maximum watermark properly [FLINK-4402] - Wrong metrics parameter names in documentation [FLINK-4409] - class conflict between jsr305-1.
+Release Notes - Flink - Version 1.1.2  [FLINK-4236] - Flink Dashboard stops showing list of uploaded jars if main method cannot be looked up  [FLINK-4309] - Potential null pointer dereference in DelegatingConfiguration#keySet()  [FLINK-4334] - Shaded Hadoop1 jar not fully excluded in Quickstart  [FLINK-4341] - Kinesis connector does not emit maximum watermark properly  [FLINK-4402] - Wrong metrics parameter names in documentation  [FLINK-4409] - class conflict between jsr305-1.
         <a href="/2016/09/05/apache-flink-1.1.2-released/">...</a>
       
     </p>
@@ -586,7 +596,7 @@ This was fixed with this release and we highly recommend all users to use this v
 
     <p>Today, the Flink community released Flink version 1.0.3, the third bugfix release of the 1.0 series.
 We recommend all users updating to this release by bumping the version of your Flink dependencies to 1.0.3 and updating the binaries on the server. You can find the binaries on the updated Downloads page.
-Fixed Issues # Bug # [FLINK-3790] [streaming] Use proper hadoop config in rolling sink [FLINK-3840] Remove Testing Files in RocksDB Backend [FLINK-3835] [optimizer] Add input id to JSON plan to resolve ambiguous input names [hotfix] OptionSerializer.
+Fixed Issues #  Bug #   [FLINK-3790] [streaming] Use proper hadoop config in rolling sink [FLINK-3840] Remove Testing Files in RocksDB Backend [FLINK-3835] [optimizer] Add input id to JSON plan to resolve ambiguous input names [hotfix] OptionSerializer.
         <a href="/2016/05/11/flink-1.0.3-released/">...</a>
       
     </p>
@@ -608,7 +618,7 @@ Fixed Issues # Bug # [FLINK-3790] [streaming] Use proper hadoop config in rollin
 
     <p>Today, the Flink community released Flink version 1.0.2, the second bugfix release of the 1.0 series.
 We recommend all users updating to this release by bumping the version of your Flink dependencies to 1.0.2 and updating the binaries on the server. You can find the binaries on the updated Downloads page.
-Fixed Issues # Bug # [FLINK-3657] [dataSet] Change access of DataSetUtils.countElements() to &lsquo;public&rsquo; [FLINK-3762] [core] Enable Kryo reference tracking [FLINK-3732] [core] Fix potential null deference in ExecutionConfig#equals() [FLINK-3760] Fix StateDescriptor.
+Fixed Issues #  Bug #   [FLINK-3657] [dataSet] Change access of DataSetUtils.countElements() to &lsquo;public&rsquo; [FLINK-3762] [core] Enable Kryo reference tracking [FLINK-3732] [core] Fix potential null deference in ExecutionConfig#equals() [FLINK-3760] Fix StateDescriptor.
         <a href="/2016/04/22/flink-1.0.2-released/">...</a>
       
     </p>
@@ -671,7 +681,7 @@ The conference welcomes submissions on everything Flink-related, including exper
 
     <p>Today, the Flink community released Flink version 1.0.1, the first bugfix release of the 1.0 series.
 We recommend all users updating to this release by bumping the version of your Flink dependencies to 1.0.1 and updating the binaries on the server. You can find the binaries on the updated Downloads page.
-Fixed Issues # Bug [FLINK-3179] - Combiner is not injected if Reduce or GroupReduce input is explicitly partitioned [FLINK-3472] - JDBCInputFormat.
+Fixed Issues #  Bug  [FLINK-3179] - Combiner is not injected if Reduce or GroupReduce input is explicitly partitioned  [FLINK-3472] - JDBCInputFormat.
         <a href="/2016/04/06/flink-1.0.1-released/">...</a>
       
     </p>
