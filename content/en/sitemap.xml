@@ -486,6 +486,9 @@
                 href="https://flink.apache.org/"
                 />
   </url><url>
+    <loc>https://flink.apache.org/2024/11/25/introducing-the-new-amazon-kinesis-data-stream-and-amazon-dynamodb-stream-sources/</loc>
+    <lastmod>2024-11-25T18:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://flink.apache.org/2024/10/25/apache-flink-kubernetes-operator-1.10.0-release-announcement/</loc>
     <lastmod>2024-10-25T18:00:00+00:00</lastmod>
   </url><url>
