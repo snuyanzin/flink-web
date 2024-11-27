@@ -724,6 +724,9 @@ release_archive:
 
   flink_cdc:
     - version_short: 3.2
+      version_long: 3.2.1
+      release_date: 2024-11-27
+    - version_short: 3.2
       version_long: 3.2.0
       release_date: 2024-09-05
     - version_short: 3.1
