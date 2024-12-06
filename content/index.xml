@@ -6,7 +6,7 @@
     <description>Recent content in Apache Flink® — Stateful Computations over Data Streams on Apache Flink</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 27 Nov 2024 08:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2024 18:00:00 +0000</lastBuildDate>
     <atom:link href="https://flink.apache.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Architecture</title>
@@ -252,6 +252,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://flink.apache.org/how-to-contribute/getting-help/</guid>
       <description>Getting Help # Having a Question? # The Apache Flink community answers many user questions every day. You can search for answers and advice in the archives or reach out to the community for help and guidance.&#xA;User Mailing List # Many Flink users, contributors, and committers are subscribed to Flink&amp;rsquo;s user mailing list. The user mailing list is a very good place to ask for help.&#xA;Before posting to the mailing list, you can search the mailing list archives for email threads that discuss issues related to yours on the following websites.</description>
+    </item>
+    <item>
+      <title>Introducing the new Prometheus connector</title>
+      <link>https://flink.apache.org/2024/12/05/introducing-the-new-prometheus-connector/</link>
+      <pubDate>Thu, 05 Dec 2024 18:00:00 +0000</pubDate>
+      <guid>https://flink.apache.org/2024/12/05/introducing-the-new-prometheus-connector/</guid>
+      <description>We are excited to announce a new sink connector that enables writing data to Prometheus (FLIP-312). This articles introduces the main features of the connector, and the reasoning behind design decisions.&#xA;This connector allows writing data to Prometheus using the Remote-Write push interface, which lets you write time-series data to Prometheus at scale.&#xA;Motivations for a Prometheus connector # Prometheus is an efficient time-series database optimized for building real-time dashboards and alerts, typically in combination with Grafana or other visualization tools.</description>
     </item>
     <item>
       <title>Apache Flink CDC 3.2.1 Release Announcement</title>
