@@ -30,7 +30,7 @@ Motivations for a Prometheus connector # Prometheus is an efficient time-series 
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.22eceb4d17baa9cdc0f57345edd6f215a40474022dfee39b63befb5fb3c596b5.css" integrity="sha256-IuzrTRe6qc3A9XNF7dbyFaQEdAIt/uObY777X7PFlrU=">
-<script defer src="/en.search.min.ac9b1be4b73c9a9aadaf94d017945b99e04a512fade07d9a238d1fda1d85c5a3.js" integrity="sha256-rJsb5Lc8mpqtr5TQF5RbmeBKUS&#43;t4H2aI40f2h2FxaM="></script>
+<script defer src="/en.search.min.534b6feae64186f2bb09a189480a889bf3caf600729339ffe7bc335bb6ae4c33.js" integrity="sha256-U0tv6uZBhvK7CaGJSAqIm/PK9gBykzn/57wzW7auTDM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -284,7 +284,7 @@ https://github.com/alex-shpak/hugo-book
           <li>
             
   
-    <a class="dropdown-item" href="https://nightlies.apache.org/flink/flink-cdc-docs-stable">CDC 3.2 (stable)<i class="link fa fa-external-link title" aria-hidden="true"></i>
+    <a class="dropdown-item" href="https://nightlies.apache.org/flink/flink-cdc-docs-stable">CDC 3.3 (stable)<i class="link fa fa-external-link title" aria-hidden="true"></i>
     </a>
   
 
@@ -500,7 +500,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#motivations-for-a-prometheus-connector">#</a>
 </h2>
 <p>Prometheus is an efficient time-series database optimized for building real-time dashboards and alerts, typically in combination with Grafana or other visualization tools.</p>
-<p>Prometheus is commonly used for observability, to monitor compute resources, Kubernetes clusters, and applications. It can also be used to observe Flink clusters an jobs. The Flink <a href="https://nightlies.apache.org/flink/flink-docs-master/docs/deployment/metric_reporters/#prometheus">Metric Reporters</a> has exactly this purpose.</p>
+<p>Prometheus is commonly used for observability, to monitor compute resources, Kubernetes clusters, and applications. It can also be used to observe Flink clusters and jobs. The Flink <a href="https://nightlies.apache.org/flink/flink-docs-master/docs/deployment/metric_reporters/#prometheus">Metric Reporter</a> has exactly this purpose.</p>
 <p>So, why do we need a connector?</p>
 <p>The goal of the new Flink Prometheus connector is not to observe Flink. The goal is to use Flink as pre-processor for observability data coming from diverse systems, and be able to write this processed time-series directly to Prometheus.</p>
 <p>Prometheus can serve as a general-purpose observability time-series database, beyond traditional infrastructure monitoring. For example, it can be used to monitor IoT devices, sensors, connected cars, media streaming devices, and any resource that streams events or measurements continuously.</p>
@@ -509,10 +509,10 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Out-of-order events</strong>: Devices may be connected via mobile networks or even Bluetooth. Events from different devices may follow different paths and arrive at very different times. A <strong>stateful, event-time logic</strong> can be used to reorder them.</li>
 <li><strong>High frequency</strong> and <strong>high cardinality</strong>: You can have a sheer number of devices, each emitting signals multiple times per second. <strong>Aggregating over time</strong> and <strong>over dimensions</strong> can reduce frequency and cardinality and make the volume of data more efficiently analysable.</li>
 <li><strong>Lack of contextual information</strong>: Raw events sent by the devices often lack of contextual information for a meaningful analysis. <strong>Enrichment</strong> of raw events, looking up some reference dataset, can be used to add dimensions useful for the analysis.</li>
-<li><strong>Noise</strong>: sensor measurement may contain noise. For example when a GPS tracker lose connection and reports spurious positions. These obvious outliers can be <strong>filtered</strong> out to simplify visualization and analysis.</li>
+<li><strong>Noise</strong>: sensor measurement may contain noise. For example when a GPS tracker loses connection and reports spurious positions. These obvious outliers can be <strong>filtered</strong> out to simplify visualization and analysis.</li>
 </ul>
 <p>Flink can be used as a pre-processor to address all the above.</p>
-<p>You can implement a sink from scratch or use AsyncIO to call the Prometheus Remote-Write endpoint. However, there are not-trivial details to implement an efficient Remote-Write client:</p>
+<p>You can implement a sink from scratch or use AsyncIO to call the Prometheus Remote-Write endpoint. However, there are non-trivial details to implement an efficient Remote-Write client:</p>
 <ul>
 <li>There is no high-level client for Prometheus Remote-Write. You would need to build on top of a low-level HTTP client.</li>
 <li>Remote-Write can be inefficient unless write requests are batched and parallelized.</li>
@@ -592,7 +592,7 @@ message Sample {
 <blockquote class="book-hint info">
   <p>The term &ldquo;time-series&rdquo; is overloaded, referring to both:</p>
 <ol>
-<li>A unique series of samples in the datastore, identified by unique set of labels,
+<li>A unique series of samples in the datastore, identified by a unique set of labels,
 and</li>
 <li><code>TimeSeries</code> as a block of the <code>WriteRequest</code>.</li>
 </ol>
@@ -605,7 +605,7 @@ and</li>
   <a class="anchor" href="#prometheus-design-principles-vs-flink-design-principles">#</a>
 </h3>
 <p>Flink is designed with a consistency-first approach. By default, any unexpected error causes the streaming job to fail and restart from the last checkpoint.</p>
-<p>In contrast, Prometheus is designed with an availability-first approach, prioritizing fast ingestion over strict consistency. When a write request contains malformed entries, the entire request must be discarded and not retried. If you retry, Prometheus will keep rejecting your write, so there is no point of doing it.
+<p>In contrast, Prometheus is designed with an availability-first approach, prioritizing fast ingestion over strict consistency. When a write request contains malformed entries, the entire request must be discarded and not retried. If you retry, Prometheus will keep rejecting your write, so there is no point doing it.
 Additionally, samples belonging to the same time series (with the same dimensions or labels) must be written in strict timestamp order.</p>
 <p>You may have already spotted the issue: any malformed or out-of-order samples can act as a “poison pill” unless you drop the offending request and proceed.</p>
 <h3 id="strict-specifications-lenient-implementations">
@@ -652,13 +652,13 @@ That said, dropping a few data points is generally not an issue for observabilit
 <li>Malformed (label names violating the specifications), and out of order writes.</li>
 <li>Restart from savepoint and from checkpoint.</li>
 <li>Behavior under backpressure, simulated exceeding the destination Prometheus quota, letting the connector retrying forever after being throttled.</li>
-<li>Maximum number of retries is exceeded, also simulated via Prometheus throttling, but with a low maximum reties. The connector behavior in this case is configurable, so both “fail” (job fails and restart) and “discard and continue” behaviors have been tested.</li>
+<li>Maximum number of retries is exceeded, also simulated via Prometheus throttling, but with a low maximum retries value. The connector behavior in this case is configurable, so both “fail” (job fails and restart) and “discard and continue” behaviors have been tested.</li>
 <li>Remote-write endpoint is not reachable.</li>
 <li>Remote-write authentication fails.</li>
 <li>Inconsistent configuration, such as (numeric) parameters outside the expected range.</li>
 </ul>
-<p>To facilitate testing we created a data generator, a separate Flink application, capable of generating semi-random data and of introducing specific errors, like out-of-order samples. The generator can also produce a high volume of data for load and stress testing.  One aspect of the test harness requiring special attention was not loosing ordering. For example, we used Kafka between the generator and the writer application. Kinesis was not an option due to its lack of strict ordering guarantees.</p>
-<p>Finally, the connector was also stress-tested, writing up to 1,000,000 samples per second with 1,000,000 cardinality (distinct time-series). 1 million is where we stopped testing, not a limit of the connector itself. This throughput has been achieved with parallelism between 24 and 32, depending on the number of samples per input record. Obviously, your mileage may vary, depending on your Prometheus backend, the samples per record,and the number of dimensions.</p>
+<p>To facilitate testing we created a data generator, a separate Flink application, capable of generating semi-random data and of introducing specific errors, like out-of-order samples. The generator can also produce a high volume of data for load and stress testing.  One aspect of the test harness requiring special attention was not losing ordering. For example, we used Kafka between the generator and the writer application. Kinesis was not an option due to its lack of strict ordering guarantees.</p>
+<p>Finally, the connector was also stress-tested, writing up to 1,000,000 samples per second with 1,000,000 cardinality (distinct time-series). 1 million is where we stopped testing, not a limit of the connector itself. This throughput has been achieved with parallelism between 24 and 32, depending on the number of samples per input record. Obviously, your mileage may vary, depending on your Prometheus backend, the samples per record, and the number of dimensions.</p>
 <h2 id="future-improvements">
   Future improvements
   <a class="anchor" href="#future-improvements">#</a>
@@ -668,7 +668,7 @@ That said, dropping a few data points is generally not an issue for observabilit
 <li>Table API/SQL support</li>
 <li>Optional validation of input data</li>
 </ol>
-<p>Both these features have been actually considered in the first release, but excluded due to the challenges that would pose. Let&rsquo;s go through some of these considerations.</p>
+<p>Both these features were considered for the first release, but excluded due to the challenges they would pose. Let&rsquo;s go through some of these considerations.</p>
 <h3 id="consideration-about-table-api-sql-interface">
   Consideration about Table API /SQL interface
   <a class="anchor" href="#consideration-about-table-api-sql-interface">#</a>
@@ -681,7 +681,7 @@ That said, dropping a few data points is generally not an issue for observabilit
   <a class="anchor" href="#considerations-about-data-validation">#</a>
 </h3>
 <p>Data validation would be a convenient feature, allowing to discard or send to a &ldquo;dead letter queue&rdquo; invalid records, before the sink attempts the write request that would be rejected by Prometheus. This would reduce data loss in case of malformed data, because Prometheus rejects the entire write request (the batch) regardless of the number of offending records.</p>
-<p>However, validating well-formed input would come with a significant performance cost. It would require checking every <code>Label</code> with a regular expressions, and check the ordering of the list of <code>Labels</code>, on every single input records.</p>
+<p>However, validating well-formed input would come with a significant performance cost. It would require checking every <code>Label</code> with a regular expression, and checking the ordering of the list of <code>Labels</code>, on every single input record.</p>
 <p>Additionally, checking <code>Sample</code> ordering in the sink would not allow reordering, unless you introduce some form of longer windowing that would inevitably increase latency. If latency is not a problem, some form of reordering can be implemented by the user, upstream of the connector.</p>
 <h2 id="list-of-contributors">
   List of Contributors
