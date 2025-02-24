@@ -677,6 +677,9 @@ release_archive:
 
   flink_shaded:
     -
+      version: "20.0"
+      release_date: 2025-02-24
+    -
       version: "19.0"
       release_date: 2024-07-03
     -
